@@ -21,13 +21,13 @@ public class CadastraFilmes {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        try {
-            JOptionPane.showMessageDialog(null, "Testando a conexão");
-            Connection con = new PostgreSqlConection().conecta();
-            JOptionPane.showMessageDialog(null, "Está conectado");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao conectar " + e);
-        }
+//        try {
+//            JOptionPane.showMessageDialog(null, "Testando a conexão");
+//            Connection con = new PostgreSqlConection().conecta();
+//            JOptionPane.showMessageDialog(null, "Está conectado");
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao conectar " + e);
+//        }
         
         JFrame frame = new TelaPrincipal("Tela principal");
         frame.setVisible(true);

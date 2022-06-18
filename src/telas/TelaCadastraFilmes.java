@@ -4,7 +4,10 @@
  */
 package telas;
 
+import DAO.FilmeDAO;
+import javaBeans.Filme;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -180,6 +183,21 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
 
     private void botaoCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastraActionPerformed
         // TODO add your handling code here:
+        try {
+            Filme obj = new Filme();
+            obj.setNome(nomeTextField.getText());
+            obj.setGenero(generoTextField.getText());
+            obj.setDiretor(diretorTextField.getText());
+            obj.setStreamer(streamerTextField.getText());
+            obj.setAno(Integer.parseInt(anoTextField.getText()));
+            
+            FilmeDAO dao = new FilmeDAO();
+            dao.cadastrarFilme(obj);
+            
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!");
+        } catch (Exception erroSql) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + erroSql);
+        }
     }//GEN-LAST:event_botaoCadastraActionPerformed
 
     /**

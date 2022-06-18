@@ -14,8 +14,9 @@ public class Filme {
     private String nome;
     private String genero;
     private String diretor;
-    private int ano;
     private String streamer;
+    private int ano;
+    
 
     public int getCodigoFilme() {
         return codigoFilme;
