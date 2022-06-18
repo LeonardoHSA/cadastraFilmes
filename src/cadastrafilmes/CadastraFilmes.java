@@ -29,7 +29,7 @@ public class CadastraFilmes {
 //            JOptionPane.showMessageDialog(null, "Erro ao conectar " + e);
 //        }
         
-        JFrame frame = new TelaPrincipal("Tela principal");
+        JFrame frame = new TelaPrincipal();
         frame.setVisible(true);
     }
     

@@ -15,8 +15,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
-    public TelaPrincipal(String title) {
-        super(title);
+    public TelaPrincipal() {
+        super("Tela Principal");
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 400);
@@ -24,9 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    private TelaPrincipal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,22 +55,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         botaoTelaListaDeFilmes.setText("Lista de Filmes");
         botaoTelaListaDeFilmes.setPreferredSize(new java.awt.Dimension(150, 25));
+        botaoTelaListaDeFilmes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoTelaListaDeFilmesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(169, 169, 169)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botaoTelaListaDeFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoTelaDeCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(120, Short.MAX_VALUE))
+                    .addComponent(botaoTelaListaDeFilmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoTelaDeCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(181, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,10 +93,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void botaoTelaDeCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaDeCadastroActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new TelaCadastraFilmes("Tela de cadastro");
+        JFrame frame = new TelaCadastraFilmes();
         frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoTelaDeCadastroActionPerformed
+
+    private void botaoTelaListaDeFilmesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaListaDeFilmesActionPerformed
+        // TODO add your handling code here:
+        JFrame frame = new TelaListaDeFilmes();
+        frame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoTelaListaDeFilmesActionPerformed
 
     /**
      * @param args the command line arguments
