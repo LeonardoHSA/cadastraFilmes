@@ -43,6 +43,14 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
         nomeTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         generoTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        diretorTextField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        streamerTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        anoTextField = new javax.swing.JTextField();
+        botaoCadastra = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 400));
@@ -58,33 +66,69 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cadastro de Filmes");
 
-        jLabel2.setText("Nome: ");
+        jLabel2.setText("Nome:* ");
 
-        jLabel3.setText("Genero: ");
+        jLabel3.setText("Genero: *");
+
+        jLabel4.setText("Diretor: *");
+
+        jLabel6.setText("Streamer: ");
+
+        jLabel5.setText("Ano:* ");
+
+        anoTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anoTextFieldActionPerformed(evt);
+            }
+        });
+
+        botaoCadastra.setText("Cadastrar");
+        botaoCadastra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastraActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("OBS: Todos os campos que conterem o sinal '*' são campos obrigatórios");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(162, 162, 162))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botaoVoltar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomeTextField)
-                            .addComponent(generoTextField))))
-                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botaoVoltar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botaoCadastra))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(streamerTextField)
+                                    .addComponent(generoTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(diretorTextField)
+                                    .addComponent(nomeTextField)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(anoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(162, 162, 162))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel7)
+                .addGap(0, 55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,8 +143,24 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
-                .addComponent(botaoVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(diretorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(streamerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(anoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar)
+                    .addComponent(botaoCadastra))
                 .addContainerGap())
         );
 
@@ -113,6 +173,14 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
         frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void anoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anoTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_anoTextFieldActionPerformed
+
+    private void botaoCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCadastraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,11 +218,19 @@ public class TelaCadastraFilmes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField anoTextField;
+    private javax.swing.JButton botaoCadastra;
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JTextField diretorTextField;
     private javax.swing.JTextField generoTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nomeTextField;
+    private javax.swing.JTextField streamerTextField;
     // End of variables declaration//GEN-END:variables
 }
